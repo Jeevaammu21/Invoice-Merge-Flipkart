@@ -1,0 +1,118 @@
+.filelist {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-panel);
+  overflow: hidden;
+  animation: fadeIn 0.25s ease;
+}
+
+.filelist__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.filelist__title {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.filelist__count {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+.filelist__clear {
+  padding: 4px 10px;
+  font-size: 11px;
+}
+
+.filelist__items {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.filelist__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+
+.filelist__item:last-child {
+  border-bottom: none;
+}
+
+.filelist__item:hover {
+  background: var(--bg-hover);
+}
+
+.filelist__item--done .filelist__item-icon { color: var(--green); }
+.filelist__item--error .filelist__item-icon { color: var(--red); }
+.filelist__item--processing .filelist__item-icon { color: var(--amber); }
+.filelist__item--idle .filelist__item-icon { color: var(--text-muted); }
+
+.filelist__item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.filelist__item-name {
+  display: block;
+  font-size: 13px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--font-mono);
+}
+
+.filelist__item-meta {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.filelist__item-error {
+  color: var(--red);
+}
+
+.filelist__item-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.filelist__remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.15s ease;
+}
+
+.filelist__remove:hover {
+  color: var(--red);
+}
+
+.status-icon {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.spinning {
+  animation: spin 0.8s linear infinite;
+}

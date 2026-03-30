@@ -1,0 +1,285 @@
+/* ── App Layout ── */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 22px;
+  color: var(--amber);
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.logo-xl {
+  color: var(--amber);
+}
+
+.header-tagline {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-left: 20px;
+  border-left: 1px solid var(--border);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Main ── */
+.app-main {
+  flex: 1;
+  padding: 32px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Grid ── */
+.app-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.col-left, .col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.card-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  font-family: var(--font-mono);
+}
+
+.card-hint {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.card .dropzone {
+  border: none;
+  border-radius: 0;
+}
+
+.card .filelist {
+  border: none;
+  border-radius: 0;
+}
+
+.card .datatable-wrap {
+  border: none;
+  border-radius: 0;
+}
+
+/* ── Action bar ── */
+.action-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-large {
+  padding: 14px 24px;
+  font-size: 13px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ── Empty state ── */
+.empty-state {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: var(--bg-panel);
+  position: relative;
+  overflow: hidden;
+}
+
+.empty-state__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  opacity: 0.15;
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  pointer-events: none;
+}
+
+.empty-state__cell {
+  border: 1px solid var(--border-bright);
+  border-radius: 3px;
+  background: var(--bg-card);
+}
+
+.empty-state__text {
+  position: relative;
+  text-align: center;
+}
+
+.empty-state__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.empty-state__sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  opacity: 0.7;
+}
+
+/* ── How it works ── */
+.howto {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-panel);
+  padding: 20px;
+}
+
+.howto__title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+}
+
+.howto__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.howto__step {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.howto__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--amber);
+  font-weight: 700;
+  min-width: 24px;
+  padding-top: 1px;
+}
+
+.howto__step div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.howto__step-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+}
+
+.howto__step-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: block;
+  line-height: 1.5;
+}
+
+/* ── Footer ── */
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  background: var(--bg-panel);
+}
+
+.footer-dot {
+  color: var(--border-bright);
+}

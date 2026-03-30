@@ -1,0 +1,94 @@
+.dropzone {
+  border: 1.5px dashed var(--border-bright);
+  border-radius: var(--radius-lg);
+  background: var(--bg-panel);
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.dropzone::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dropzone:hover::before,
+.dropzone--active::before {
+  opacity: 1;
+}
+
+.dropzone:hover {
+  border-color: var(--amber-dim);
+  background: var(--bg-card);
+}
+
+.dropzone--active {
+  border-color: var(--amber);
+  border-style: solid;
+  background: var(--amber-glow);
+  transform: scale(1.005);
+}
+
+.dropzone--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.dropzone__icon {
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dropzone:hover .dropzone__icon,
+.dropzone--active .dropzone__icon {
+  color: var(--amber);
+  transform: translateY(-4px);
+}
+
+.dropzone__text {
+  text-align: center;
+}
+
+.dropzone__headline {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.dropzone__sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.dropzone__link {
+  color: var(--amber);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dropzone__badge {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
